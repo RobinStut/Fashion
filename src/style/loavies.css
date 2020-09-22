@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+}
+.page {
+    margin-top: 48px;
+}
+.page img{
+    width: 100vw;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    position: fixed;
+    width: 100vw;
+}
+.nav img{
+    height: 48px;
+}
+@media screen and (min-width: 820px) {  
+    .nav img {
+        height: 76px;
+    }
+    .page {
+        margin-top: 76px;
+    }
+}
