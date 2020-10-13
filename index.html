@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOAVIES | Online fashion shop je op Loavies.com | loavies.com</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/style/loavies.css">
+    <link rel="stylesheet" href="./src/style/chatbox.css">
     <link rel="shortcut icon" type="image/x-icon" href="./src/favicon/favicon.ico"/>
 </head>
 <body>
@@ -47,5 +49,21 @@
         <source media="(min-width: 600px)" srcset="./src/page/600px.jpg">
         <img src="./src/page/550px.jpg"/>
     </picture>
+    <div class="chatbox">
+        <button chatbox-launch class="chatbox-launch">Chat met onze digitale assisent</button>
+        <div chatbox-content  class="chatbox-content-wrapper hide">
+            <div class="chatbox-header">
+                <strong class="chatbox-header-title">Chatbot LOAVIES</strong>
+                <button class="chatbox-close-button" chatbox-close title="Close"><i class="icon minimize-icon"></i></button>
+                <button class="chatbox-refresh-button" chatbox-restart title="Refresh"><i class="icon refresh-icon"></i></button>
+            </div>
+            <ul chatbox-messages class="chat-content"></ul>
+            <div class="chatbox-input">
+                <textarea chatbox-input disabled placeholder="Maak een keuze"></textarea>
+                <button class="chatbox-send-button" chatbox-input-submit disabled title="Send"><i class="icon send-icon"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="./src/js/chatbox.js"></script>
 </body>
 </html>
