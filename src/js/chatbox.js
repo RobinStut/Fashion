@@ -35,6 +35,44 @@ const loadingDots = () => {
     return wrapper
 }
 
+const createMessageElements = (data, node) => {
+    console.log(data);
+    const message = data.result.message
+    const quickAnswers = data.result.quickAnswers
+    const externalLinks = data.result.externalLinks
+    const allQuickOptions = document.createElement('li')
+    const quickOptions = document.createElement('ul')
+    quickOptions.classList.add('chatbox-quick-options')
+    node.innerText = message
+    
+    if (quickAnswers && quickAnswers.length) {
+        quickAnswers.forEach(quickAnswer => {
+            const quickOption = document.createElement('button')
+            quickOption.classList.add('chatbox-quick-option')
+            quickOption.innerText = quickAnswer
+            quickOption.value = quickAnswer
+            quickOption.addEventListener('click', quickAnswerClicked)
+            quickOptions.append(quickOption)
+        })
+    }
+    
+    if (externalLinks && externalLinks.length) {
+        externalLinks.forEach(link => {
+            const externalLink = document.createElement('a')
+            externalLink.classList.add('chatbox-quick-option')
+            externalLink.innerText = link.value
+            externalLink.value = link.value
+            externalLink.href = link.url
+            quickOptions.append(externalLink)
+        })
+    }
+    allQuickOptions.append(quickOptions)
+    chatboxMessages.append(allQuickOptions)
+
+    chatboxMessages.scrollTop = chatboxMessages.scrollHeight
+
+}
+
 const quickAnswerClicked = async (event) => {
     const chosenValue = event.target.value
     const parent = event.target.parentNode
@@ -74,44 +112,6 @@ const preMessage = () => {
     newMessage.append(loadingDots())
     chatboxMessages.append(newMessage)
     return newMessage
-}
-
-const createMessageElements = (data, node) => {
-    const message = data.result.message
-    const quickAnswers = data.result.quickAnswers
-    const externalLinks = data.result.externalLinks
-    const allQuickOptions = document.createElement('li')
-    // allQuickOptions.classList.add('incoming')
-    const quickOptions = document.createElement('ul')
-    quickOptions.classList.add('chatbox-quick-options')
-    node.innerText = message
-    
-    if (quickAnswers && quickAnswers.length) {
-        quickAnswers.forEach(quickAnswer => {
-            const quickOption = document.createElement('button')
-            quickOption.classList.add('chatbox-quick-option')
-            quickOption.innerText = quickAnswer
-            quickOption.value = quickAnswer
-            quickOption.addEventListener('click', quickAnswerClicked)
-            quickOptions.append(quickOption)
-        })
-    }
-    
-    if (externalLinks && externalLinks.length) {
-        externalLinks.forEach(link => {
-            const externalLink = document.createElement('a')
-            externalLink.classList.add('chatbox-quick-option')
-            externalLink.innerText = link.value
-            externalLink.value = link.value
-            externalLink.href = link.url
-            quickOptions.append(externalLink)
-        })
-    }
-    allQuickOptions.append(quickOptions)
-    chatboxMessages.append(allQuickOptions)
-
-    chatboxMessages.scrollTop = chatboxMessages.scrollHeight
-
 }
 
 const closeChatbox = () => {
