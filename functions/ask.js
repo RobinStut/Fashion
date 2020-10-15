@@ -49,7 +49,7 @@ exports.handler = async function (event, context) {
 
                 return {
                         "value": "none",
-                        "message": "Ik weet niet precies wat je bedoeld. Stel je vraag op een andere manier, of neem contact op met de Customer care",
+                        "message": "Ik begrijp je vraag niet goed. Stel je vraag op een andere manier, of neem contact op met de Customer care.",
                         "quickAnswers": [],
                         "externalLinks": [
                             {
