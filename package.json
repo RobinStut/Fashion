@@ -1,0 +1,28 @@
+{
+  "name": "loavies",
+  "version": "1.0.0",
+  "description": "index",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobinStut/LOAVIES.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobinStut/LOAVIES/issues"
+  },
+  "homepage": "https://github.com/RobinStut/LOAVIES#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "googleapis": "^59.0.0",
+    "axios": "^0.20.0",
+    "@nlpjs/basic": "^4.11.2",
+    "babel-loader": "^8.1.0"
+  },
+  "directories": {
+    "doc": "docs"
+  }
+}
