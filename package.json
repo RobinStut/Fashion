@@ -1,20 +1,19 @@
 {
-  "name": "loavies",
+  "name": "fashion",
   "version": "1.0.0",
   "description": "index",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RobinStut/LOAVIES.git"
+    "url": "git+https://github.com/RobinStut/FASHION.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RobinStut/LOAVIES/issues"
+    "url": "https://github.com/RobinStut/FASHION/issues"
   },
-  "homepage": "https://github.com/RobinStut/LOAVIES#readme",
+  "homepage": "https://github.com/RobinStut/FASHION#readme",
   "dependencies": {},
   "devDependencies": {
     "googleapis": "^59.0.0",
